@@ -13,12 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val f1=Fragment1()
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            add(R.id.fragmentContainerView,f1.apply {
-                arguments=Bundle().apply { putString("message","Hello") }
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragmentContainerView,f1.apply {
+                arguments=Bundle().apply{
+                    putString("message","First Time Loading")}
             })
-        }
+            .commit()
+
         /*Button1 click*/
         val btn1=findViewById<Button>(R.id.button)
         val btn2=findViewById<Button>(R.id.button2)
