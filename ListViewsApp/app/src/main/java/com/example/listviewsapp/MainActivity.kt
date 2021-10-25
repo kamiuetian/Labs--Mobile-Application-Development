@@ -20,35 +20,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val lView=findViewById<ListView>(R.id.lView)
-        val data=arrayOf("java","php","Koltin","C++")
-        //val adapter=ArrayAdapter(this,R.layout.simple_list_item_1,data)
-       lView.adapter=myAdapter(this,names,phone,images)
+        val data=arrayOf("java","php","Koltin","C++","java","php","Koltin","C++")
+        val adapter=ArrayAdapter(this,R.layout.simple_list_item_1,data)
+        //lView.adapter=adapter
+        lView.adapter=myAdapter(this,names,phone,images)
        lView.setOnItemClickListener{av,v,i,l->
             Toast.makeText(this,"Item Slected:${data[i]}",Toast.LENGTH_LONG)
                 .show()
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*Custom Adapter*/
+/*Custom Adapter*/
 
     class myAdapter(private val context:Activity,
                     private val names:Array<String>,
                     private val phones:Array<String>,
                     private val images:Array<Int>
-    ):ArrayAdapter<String>(context,R.layout.custom_list,names)
+    ):ArrayAdapter<Int>(context,R.layout.custom_list,images)
     {
+        init {
+
+        }
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
             val inflator=context.layoutInflater
             val view=inflator.inflate(R.layout.custom_list,null,true)

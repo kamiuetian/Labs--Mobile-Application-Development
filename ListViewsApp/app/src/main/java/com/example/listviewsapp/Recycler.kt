@@ -13,16 +13,20 @@ class Recycler : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
         val rView=findViewById<RecyclerView>(R.id.recycler)
+        var adapter=customAdapter(names)
+      //var adapter=myAdapter(names)
 
-      var adapter=myAdapter(names)
         rView.adapter=adapter
-        adapter.setOnItemClickListener(object : myAdapter.onItemClickListener{
+
+        adapter.setOnItemClickListener(object:customAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@Recycler,"Item ${names[position]} clicked",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Recycler,"Item ${names[position]}",Toast.LENGTH_SHORT).show()
             }
+
+
 
         })
 
-        rView.layoutManager=GridLayoutManager(this,3)
+        rView.layoutManager=LinearLayoutManager(this)
     }
 }
