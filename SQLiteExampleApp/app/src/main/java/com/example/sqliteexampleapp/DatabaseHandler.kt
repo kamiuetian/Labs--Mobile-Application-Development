@@ -25,6 +25,7 @@ class DatabaseHandler(context: Context) :
         val CREATE_CONTACTS_TABLE = ("CREATE TABLE " + DBContract.EmpEntry.TABLE_Name + "("
                 + DBContract.EmpEntry.KEY_ID + " INTEGER PRIMARY KEY," + DBContract.EmpEntry.KEY_NAME + " TEXT,"
                 + DBContract.EmpEntry.KEY_EMAIL + " TEXT" + ")")
+
         db?.execSQL(CREATE_CONTACTS_TABLE)
 
     }

@@ -3,6 +3,7 @@ package com.example.sqliteexampleapp
 import android.provider.BaseColumns
 
 class DBContract {
+    /*inner class*/
     class EmpEntry:BaseColumns
     {
         companion object {
