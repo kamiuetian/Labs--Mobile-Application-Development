@@ -1,21 +1,20 @@
-package com.example.sqliteexampleapp
+package com.example.sqliteexampleapp.sqlite
 
-import EmpModelClass
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.sqliteexampleapp.DBContract.EmpEntry.Companion.KEY_EMAIL
-import com.example.sqliteexampleapp.DBContract.EmpEntry.Companion.KEY_ID
-import com.example.sqliteexampleapp.DBContract.EmpEntry.Companion.KEY_NAME
+import com.example.sqliteexampleapp.sqlite.DBContract.EmpEntry.Companion.KEY_EMAIL
+import com.example.sqliteexampleapp.sqlite.DBContract.EmpEntry.Companion.KEY_ID
+import com.example.sqliteexampleapp.sqlite.DBContract.EmpEntry.Companion.KEY_NAME
 
 //creating the database logic, extending the SQLiteOpenHelper base class
 class DatabaseHandler(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
-        private val DATABASE_VERSION = 1
+        private val DATABASE_VERSION = 2
         private val DATABASE_NAME = "EmployeeDatabase"
 
     }
@@ -41,11 +40,11 @@ class DatabaseHandler(context: Context) :
         val db = this.writableDatabase
 
         val contentValues = ContentValues()
-        contentValues.put(DBContract.EmpEntry.KEY_NAME, emp.name) // EmpModelClass Name
-        contentValues.put(DBContract.EmpEntry.KEY_EMAIL, emp.email) // EmpModelClass Email
+        //contentValues.put(DBContract.EmpEntry.KEY_NAME, emp.name) // com.example.sqliteexampleapp.sqlite.EmpModelClass Name
+        contentValues.put(DBContract.EmpEntry.KEY_EMAIL, emp.email) // com.example.sqliteexampleapp.sqlite.EmpModelClass Email
 
         // Inserting employee details using insert query.
-        val success = db.insert(DBContract.EmpEntry.TABLE_Name, null, contentValues)
+        val success = db.insert(DBContract.EmpEntry.TABLE_Name,DBContract.EmpEntry.KEY_NAME , contentValues)
         //2nd argument is String containing nullColumnHack
 
         db.close() // Closing database connection
@@ -94,8 +93,8 @@ class DatabaseHandler(context: Context) :
     fun updateEmployee(emp: EmpModelClass): Int {
         val db = this.writableDatabase
         val contentValues = ContentValues()
-        contentValues.put(DBContract.EmpEntry.KEY_NAME, emp.name) // EmpModelClass Name
-        contentValues.put(DBContract.EmpEntry.KEY_EMAIL, emp.email) // EmpModelClass Email
+        contentValues.put(DBContract.EmpEntry.KEY_NAME, emp.name) // com.example.sqliteexampleapp.sqlite.EmpModelClass Name
+        contentValues.put(DBContract.EmpEntry.KEY_EMAIL, emp.email) // com.example.sqliteexampleapp.sqlite.EmpModelClass Email
 
         // Updating Row
         val success = db.update(DBContract.EmpEntry.TABLE_Name, contentValues, DBContract.EmpEntry.KEY_ID + "=" + emp.id, null)
@@ -111,7 +110,7 @@ class DatabaseHandler(context: Context) :
     fun deleteEmployee(emp: EmpModelClass): Int {
         val db = this.writableDatabase
         val contentValues = ContentValues()
-        contentValues.put(KEY_ID, emp.id) // EmpModelClass id
+        contentValues.put(KEY_ID, emp.id) // com.example.sqliteexampleapp.sqlite.EmpModelClass id
         // Deleting Row
         val success = db.delete(DBContract.EmpEntry.TABLE_Name, KEY_ID + "=" + emp.id, null)
         //2nd argument is String containing nullColumnHack

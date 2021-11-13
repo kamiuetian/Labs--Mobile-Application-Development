@@ -5,9 +5,22 @@
       <map>
         <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/drawable/ic_action_delete.xml" value="0.2390194075587334" />
         <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/drawable/ic_action_edit.xml" value="0.2390194075587334" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout-land/activity_main_hello_world.xml" value="0.38372093023255816" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout-sw400dp/activity_main_hello_world.xml" value="0.2234375" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout-sw720dp-land/activity_main_hello_world.xml" value="0.190625" />
         <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout/activity_main.xml" value="0.21910112359550563" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout/activity_main_hello_world.xml" value="0.14705882352941177" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout/activity_main_helloworld.xml" value="0.2234375" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout/activity_main_preferences.xml" value="0.2234375" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout/activity_main_threads.xml" value="0.2234375" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout/activity_settings.xml" value="0.20625" />
         <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout/dialog_update.xml" value="0.21910112359550563" />
         <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout/items_row.xml" value="0.21910112359550563" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout/preferences.xml" value="0.2234375" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/layout/prefs.xml" value="0.2234375" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/xml/general_preferences.xml" value="0.2234375" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/xml/prefs.xml" value="0.2234375" />
+        <entry key="..\:/Study/Mobile Application Development/Labs/SQLiteExampleApp/app/src/main/res/xml/root_preferences.xml" value="0.2234375" />
       </map>
     </option>
   </component>

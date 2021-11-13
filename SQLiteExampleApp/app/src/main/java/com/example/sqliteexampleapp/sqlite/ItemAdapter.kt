@@ -1,14 +1,14 @@
+package com.example.sqliteexampleapp.sqlite
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sqliteexampleapp.MainActivity
 import com.example.sqliteexampleapp.R
 
 
@@ -45,8 +45,8 @@ class ItemAdapter(val context: Context, val items: ArrayList<EmpModelClass>) :
         holder.ivEdit.setOnClickListener { view ->
 
             if (context is MainActivity) {
-                context.updateRecordDialog(item)
-            }
+            context.updateRecordDialog(item)
+        }
         }
 
         holder.ivDelete.setOnClickListener { view ->

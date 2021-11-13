@@ -1,4 +1,4 @@
-package com.example.sqliteexampleapp
+package com.example.sqliteexampleapp.sqlite
 
 import android.provider.BaseColumns
 
@@ -11,6 +11,14 @@ class DBContract {
             val KEY_ID = "_id"
             val KEY_NAME = "name"
             val KEY_EMAIL = "email"
+
+        }
+    }
+    /*second*/
+    class student:BaseColumns
+    {
+        companion object{
+            val TABLE_NAME="StudentTable"
         }
     }
 }

@@ -1,0 +1,67 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        app:title="General">
+    <Preference
+        app:title="General Settings"
+        >
+        <intent android:action="android.intent.action.VIEW"
+            android:data="https://www.google.com">
+
+        </intent>
+
+    </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="@string/signature_title"
+            app:summary="this is summary"
+            />
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="wifi disabed"
+            app:summaryOn="wifi enabled"
+            app:title="@string/attachment_title" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        app:title="Notifications"
+        app:icon="@drawable/ic_icons8_edit">
+        <SwitchPreference
+            app:key="notification"
+            android:defaultValue="true"
+            app:summaryOn="Enabled"
+            android:summaryOff="Disbaled">
+
+        </SwitchPreference>
+    </PreferenceCategory>
+    <EditTextPreference
+        android:defaultValue="Default value"
+        android:key="edit_text_preference_1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Edit text preference" />
+
+</PreferenceScreen>
