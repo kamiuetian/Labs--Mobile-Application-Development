@@ -7,12 +7,21 @@ import android.util.Log
 import android.widget.Toast
 import com.example.sqliteexampleapp.R
 
-class SettingsActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
-        val pref=PreferenceManager.getDefaultSharedPreferences(this)
-        val sig=pref.getString("signature","")
-        Log.d("Signature",sig)
-        }
-}
+
+
+/*beenish 087
+<item
+        android: "@+id/menuAccount"
+        android:title="Profile"
+        />
+
+        <item
+        android: "@+id/menuHome"
+        android:title="Home"
+        />
+
+        <item
+        android: "@+id/menuSetting"
+        android:title="ThirdActivity"
+        />
+      }*/
