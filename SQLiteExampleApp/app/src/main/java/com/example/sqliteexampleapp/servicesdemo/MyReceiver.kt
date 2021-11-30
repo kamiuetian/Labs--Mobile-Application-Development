@@ -15,9 +15,9 @@ import com.example.sqliteexampleapp.sqlite.MainActivity
 
 
 class MyReceiver : BroadcastReceiver() {
-var state:String?=null
+    var state:String?=null
     override fun onReceive(context: Context?, intent: Intent?) {
-         val isAirplaneModeEnabled = intent?.getBooleanExtra("state", false) ?: return
+        val isAirplaneModeEnabled = intent?.getBooleanExtra("state", false) ?: return
 
         // checking whether airplane mode is enabled or not
         if (isAirplaneModeEnabled) {
@@ -28,6 +28,7 @@ var state:String?=null
             Toast.makeText(context, "Airplane Mode Disabled", Toast.LENGTH_LONG).show()
         }
     }
+
 
 }
 
