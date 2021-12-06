@@ -1,0 +1,42 @@
+  private fun checkandcreateDir(): File{
+        var appFile:File //null
+        appFile =Environment.getExternalStorageDirectory() // /sdcard
+        appFile= File(appFile,getString(R.string.app_name))// /sdcard/SqlExampleApp
+        if(!appFile.exists()) // check if exists
+        {
+            if(appFile.mkdir()) // /sdcard/sqlExampleApp
+            {
+                Toast.makeText(this,"File Created",Toast.LENGTH_LONG).show()
+            }
+            else
+                Toast.makeText(this,"File not Created",Toast.LENGTH_LONG).show()
+        }
+        /*file Already Exists*/
+        appFile=File(appFile,FILE_NAME)
+        return appFile // /sdcard/SqlExampleApp/myfile.txt
+    }
+  /*Button SAVE*/
+        btnSave.setOnClickListener({
+            var msg:String=etMsg.text.toString()
+            var appFile=checkandcreateDir() // /sdcard/SqlExampleApp/myfie.txt
+            var fos:FileOutputStream= FileOutputStream(appFile)
+            fos.write(msg.encodeToByteArray())
+            fos.close()
+        })
+
+        /*Read Button*/
+        btnRead.setOnClickListener({
+            var appFile=checkandcreateDir() //sdcard/SqlExampleApp/myfile.txt
+            var fis=FileInputStream(appFile)
+            val b= ByteArray(fis.available())
+            fis.read(b)
+            fis.close()
+            etMsg.setText(String(b))
+        })
+    }
+    //
+    Create app that allows user to read and write data
+    to a File in external Storage.
+    Extend the app to allow user to select a file by 
+    entering name in editText.
+    Allow user to append to the file.
